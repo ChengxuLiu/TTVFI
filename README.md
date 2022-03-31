@@ -40,6 +40,7 @@ This is the official PyTorch implementation of the paper [Learning Trajectory-Aw
 * Pillow == 8.4.0
 * imageio == 2.15.0
 * numpy == 1.19.5
+
 Generate the Correlation package required by [PWCNet](https://github.com/NVlabs/PWC-Net/tree/master/PyTorch/external_packages/correlation-pytorch-master):
 ```
 git clone https://github.com/ChengxuLiu/TTVFI.git
