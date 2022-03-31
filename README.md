@@ -99,7 +99,7 @@ cd ./models/PWCNet/correlation_package_pytorch1_0/
 cd ../../..
 mkdir checkpoint
 ```
-4. Prepare input frames (modify "First", "Second" in `./demo.py`), 
+4. Prepare input frames and modify "First" and "Second" in `./demo.py`
 5. Run demo
 ```
 python demo.py
@@ -150,7 +150,7 @@ mkdir weights
 python train_stage1.py
 ```
 5. The models of stage1 are saved in `./weights` and fed into stage2 (modify "pretrained" in `./train_stage2.py`)
-6. Run training of stage1
+6. Run training of stage2
 ```
 # stage two
 python train_stage2.py
