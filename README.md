@@ -99,7 +99,7 @@ cd ./models/PWCNet/correlation_package_pytorch1_0/
 cd ../../..
 mkdir checkpoint
 ```
-4. Prepare input frames and modify "First" and "Second" in `./demo.py`
+4. Prepare input frames and modify "FirstPath" and "SecondPath" in `./demo.py`
 5. Run demo
 ```
 python demo.py
