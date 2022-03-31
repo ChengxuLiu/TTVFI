@@ -75,3 +75,27 @@ class Vimeo_90K_loader(Dataset):
         else:
             return len(self.testlist)
 
+
+class UCF101_loader(Dataset):
+    def __init__(self, data_root):
+        self.data_root = data_root
+        self.image_root = self.data_root
+        self.testlist = os.listdir(self.data_root)
+
+        self.transforms = transforms.Compose([
+            transforms.ToTensor()
+        ])
+
+    def __getitem__(self, index):
+        imgpath = os.path.join(self.image_root, self.testlist[index])
+        path_pre1 = os.path.join(imgpath,"frame_00.png")
+        path_mid = os.path.join(imgpath, "frame_01_gt.png")
+        path_pre2 = os.path.join(imgpath,"frame_02.png")
+
+        imgpaths = [path_pre1,path_mid,path_pre2]##########
+        images = [Image.open(pth) for pth in imgpaths]
+        images = [self.transforms(img_) for img_ in images]
+        return images[0],images[1],images[2]
+
+    def __len__(self):
+        return len(self.testlist)

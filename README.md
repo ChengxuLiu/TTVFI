@@ -49,69 +49,47 @@ cd ./TTVFI/models/PWCNet/correlation_package_pytorch1_0/
 ```
 
 ## Model and Results
-<!-- Pre-trained models can be downloaded from [google drive](https://drive.google.com/drive/folders/1dXzyi_9nMLC3FU7SKkvLEGOMyv0lfcV2?usp=sharing) and [baidu cloud](https://pan.baidu.com/s/1xjGCnChxFxFcPs0cBVZ-ew)(nbgc).
-* *TTVSR_REDS.pth*: trained on REDS dataset with BI degradation.
-* *TTVSR_Vimeo90K.pth*: trained on Vimeo-90K dataset with BD degradation.
+Pre-trained models can be downloaded from [onedrive](https://1drv.ms/u/s!Au4fJlmAZDhlhwjmP0D2RJOQaFqF?e=UHVz3H), [google drive](https://drive.google.com/drive/folders/1JWl22XUc0IOp1mx79_DRtwOwHjO1FP8I?usp=sharing), and [baidu cloud](https://pan.baidu.com/s/1nCjVhwArNajWFDDYwt4IUA)(j3nd).
+* *TTVSR_stage1.pth*: trained from first stage with consistent motion learning.
+* *TTVSR_stage2.pth*: trained from second stage with trajectory-aware Transformer on Viemo-90K dataset.
 
-The output results on REDS4, Vid4 and UMD10 can be downloaded from [google drive](https://drive.google.com/drive/folders/1dXzyi_9nMLC3FU7SKkvLEGOMyv0lfcV2?usp=sharing) and [baidu cloud](https://pan.baidu.com/s/1xjGCnChxFxFcPs0cBVZ-ew)(nbgc).
+The output results on Vimeo-90K testing set, DAVIS, UCF101 and SNU-FILM can be downloaded from [onedrive](https://1drv.ms/u/s!Au4fJlmAZDhlhwjmP0D2RJOQaFqF?e=UHVz3H), [google drive](https://drive.google.com/drive/folders/1JWl22XUc0IOp1mx79_DRtwOwHjO1FP8I?usp=sharing), and [baidu cloud](https://pan.baidu.com/s/1nCjVhwArNajWFDDYwt4IUA)(j3nd).
 
- -->
+
 ## Dataset
-<!-- 
 1. Training set
-	* [REDS](https://seungjunnah.github.io/Datasets/reds.html) dataset. We regroup the training and validation dataset into one folder. The original training dataset has 240 clips from 000 to 239. The original validation dataset were renamed from 240 to 269.
-		- Make REDS structure be:
-	    ```
-			├────REDS
-				├────train
-					├────train_sharp
-						├────000
-						├────...
-						├────269
-					├────train_sharp_bicubic
-						├────X4
-							├────000
-							├────...
-							├────269
-        ```
-	* [Viemo-90K](https://github.com/anchen1011/toflow) dataset. Download the [original training + test set](http://data.csail.mit.edu/tofu/dataset/vimeo_septuplet.zip) and use the script 'degradation/BD_degradation.m' (run in MATLAB) to generate the low-resolution images. The `sep_trainlist.txt` file listing the training samples in the download zip file.
+	* [Viemo-90K](https://github.com/anchen1011/toflow) dataset. Download the [Both triplet training and test set](http://data.csail.mit.edu/tofu/dataset/vimeo_triplet.zip). The `tri_trainlist.txt` file listing the training samples in the download zip file.
 		- Make Vimeo-90K structure be:
 		```
-			├────vimeo_septuplet
+			├────vimeo_triplet
 				├────sequences
 					├────00001
 					├────...
-					├────00096
-				├────sequences_BD
-					├────00001
-					├────...
-					├────00096
-				├────sep_trainlist.txt
-				├────sep_testlist.txt
+					├────00078
+				├────tri_trainlist.txt
+				├────tri_testlist.txt
         ```
 
 2. Testing set
-	* [REDS4](https://seungjunnah.github.io/Datasets/reds.html) dataset. The 000, 011, 015, 020 clips from the original training dataset of REDS.
-    * [Viemo-90K](https://github.com/anchen1011/toflow) dataset. The `sep_testlist.txt` file listing the testing samples in the download zip file.
-    * [Vid4 and UDM10](https://www.terabox.com/web/share/link?surl=LMuQCVntRegfZSxn7s3hXw&path=%2Fproject%2Fpfnl) dataset. Use the script 'degradation/BD_degradation.m' (run in MATLAB) to generate the low-resolution images.
-		- Make Vid4 and UDM10 structure be:
+    * [Viemo-90K](https://github.com/anchen1011/toflow) dataset. The `tri_testlist.txt` file listing the testing samples in the download zip file.
+    * [DAVIS](https://github.com/HyeongminLEE/AdaCoF-pytorch/tree/master/test_input/davis), [UCF101](https://drive.google.com/file/d/0B7EVK8r0v71pdHBNdXB6TE1wSTQ/view?resourcekey=0-r6ihCy20h3kbgZ3ZdimPiA), and [SNU-FILM](https://myungsub.github.io/CAIN/) dataset.
+		- Make DAVIS, UCF101, and SNU-FILM structure be:
 		```
-			├────VID4
-				├────BD
-					├────calendar
-					├────...
-				├────HR
-					├────calendar
-					├────...
-			├────UDM10
-				├────BD
-					├────archpeople
-					├────...
-				├────HR
-					├────archpeople
-					├────...
+			├────DAVIS
+				├────input
+				├────gt
+			├────UCF101
+				├────1
+				├────...
+			├────SNU-FILM
+				├────test
+					├────GOPRO_test
+					├────YouTube_test
+				├────test-easy.txt			
+				├────...		
+				├────test-extreme.txt		
         ```
- -->
+
 ## Test
 <!-- 1. Clone this github repo
 ```

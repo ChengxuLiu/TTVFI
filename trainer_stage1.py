@@ -22,7 +22,7 @@ def train():
     if args.use_cuda:
         print("Turn the model into CUDA")
         model = model.cuda()
-    args.save_path =args.save_path+'model_weights/'+ str(args.uid)
+    args.save_path =args.save_path+'weights/'+ str(args.uid)
     if not args.SAVED_MODEL==None:
         print("Fine tuning on " +  args.SAVED_MODEL)
         if not args.use_cuda:
