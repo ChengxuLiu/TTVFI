@@ -6,7 +6,7 @@ import  torch
 
 parser = argparse.ArgumentParser(description='TTVSR')
 
-parser.add_argument('--datasetPath_vimeo',default='./Vimeo-90K/vimeo_triplet/',help = 'the path of datasets')
+parser.add_argument('--datasetPath',default='./Vimeo-90K/vimeo_triplet/',help = 'the path of datasets')
 parser.add_argument('--seed', type=int, default=1, help='random seed (default: 1)')
 parser.add_argument('--numEpoch', '-e', type = int, default=100, help= 'Number of epochs to train(default:100)')
 parser.add_argument('--batch_size', '-b',type = int ,default=4, help = 'batch size (default:4)' )

@@ -112,7 +112,7 @@ def train():
         model.load_state_dict(model_dict)
         pretrained_dict = None
 
-    vimeo_test_set = Vimeo_90K_loader(data_root=args.datasetPath_vimeo,is_training=False)
+    vimeo_test_set = Vimeo_90K_loader(data_root=args.datasetPath,is_training=False)
     vimeo_val_loader = torch.utils.data.DataLoader(vimeo_test_set, batch_size=args.batch_size, shuffle=False,
                                              num_workers=1, pin_memory=True if args.use_cuda else False)
 

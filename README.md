@@ -9,6 +9,7 @@ This is the official PyTorch implementation of the paper [Learning Trajectory-Aw
 - [Requirements and dependencies](#requirements-and-dependencies)
 - [Model and Results](#model-and-results)
 - [Dataset](#dataset)
+- [Demo](#demo)
 - [Test](#test)
 - [Train](#train)
 - [Citation](#citation)
@@ -40,13 +41,6 @@ This is the official PyTorch implementation of the paper [Learning Trajectory-Aw
 * Pillow == 8.4.0
 * imageio == 2.15.0
 * numpy == 1.19.5
-
-Generate the Correlation package required by [PWCNet](https://github.com/NVlabs/PWC-Net/tree/master/PyTorch/external_packages/correlation-pytorch-master):
-```
-git clone https://github.com/ChengxuLiu/TTVFI.git
-cd ./TTVFI/models/PWCNet/correlation_package_pytorch1_0/
-./build.sh
-```
 
 ## Model and Results
 Pre-trained models can be downloaded from [onedrive](https://1drv.ms/u/s!Au4fJlmAZDhlhwjmP0D2RJOQaFqF?e=UHVz3H), [google drive](https://drive.google.com/drive/folders/1JWl22XUc0IOp1mx79_DRtwOwHjO1FP8I?usp=sharing), and [baidu cloud](https://pan.baidu.com/s/1nCjVhwArNajWFDDYwt4IUA)(j3nd).
@@ -89,39 +83,80 @@ The output results on Vimeo-90K testing set, DAVIS, UCF101 and SNU-FILM can be d
 				├────...		
 				├────test-extreme.txt		
         ```
+## Demo
+1. Clone this github repo
+```
+git clone https://github.com/ChengxuLiu/TTVFI.git
+cd TTVFI
+```
+2. Generate the Correlation package required by [PWCNet](https://github.com/NVlabs/PWC-Net/tree/master/PyTorch/external_packages/correlation-pytorch-master):
+```
+cd ./models/PWCNet/correlation_package_pytorch1_0/
+./build.sh
+```
+3. Download pre-trained weights ([onedrive](https://1drv.ms/u/s!Au4fJlmAZDhlhwjmP0D2RJOQaFqF?e=UHVz3H)|[google drive](https://drive.google.com/drive/folders/1JWl22XUc0IOp1mx79_DRtwOwHjO1FP8I?usp=sharing)|[baidu cloud](https://pan.baidu.com/s/1nCjVhwArNajWFDDYwt4IUA)(j3nd)) under `./checkpoint`
+```
+cd ../../..
+mkdir checkpoint
+```
+4. Prepare input frames (modify "First", "Second" in `./demo.py`), 
+5. Run demo
+```
+python demo.py
+```
+
+
 
 ## Test
-<!-- 1. Clone this github repo
+1. Clone this github repo
 ```
-git clone https://github.com/ChengxuLiu/TTVSR.git
-cd TTVSR
+git clone https://github.com/ChengxuLiu/TTVFI.git
+cd TTVFI
 ```
-2. Download pre-trained weights ([google drive](https://drive.google.com/drive/folders/1dXzyi_9nMLC3FU7SKkvLEGOMyv0lfcV2?usp=sharing)|[baidu cloud](https://pan.baidu.com/s/1xjGCnChxFxFcPs0cBVZ-ew)(nbgc)) under `./checkpoint`
-3. Prepare testing dataset and modify "dataset_root" in `configs/TTVSR_reds4.py` and `configs/TTVSR_vimeo90k.py`
-4. Run test
+2. Generate the Correlation package required by [PWCNet](https://github.com/NVlabs/PWC-Net/tree/master/PyTorch/external_packages/correlation-pytorch-master):
 ```
-# REDS model
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ./tools/dist_test.sh configs/TTVSR_reds4.py checkpoint/TTVSR_REDS.pth 8 [--save-path 'save_path']
-# Vimeo model
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ./tools/dist_test.sh configs/TTVSR_vimeo90k.py checkpoint/TTVSR_Vimeo90K.pth 8 [--save-path 'save_path']
+cd ./models/PWCNet/correlation_package_pytorch1_0/
+./build.sh
 ```
-5. The results are saved in `save_path`.
- -->
-## Train
-<!-- 1. Clone this github repo
+3. Download pre-trained weights ([onedrive](https://1drv.ms/u/s!Au4fJlmAZDhlhwjmP0D2RJOQaFqF?e=UHVz3H)|[google drive](https://drive.google.com/drive/folders/1JWl22XUc0IOp1mx79_DRtwOwHjO1FP8I?usp=sharing)|[baidu cloud](https://pan.baidu.com/s/1nCjVhwArNajWFDDYwt4IUA)(j3nd)) under `./checkpoint`
 ```
-git clone https://github.com/ChengxuLiu/TTVSR.git
-cd TTVSR
+cd ../../..
+mkdir checkpoint
 ```
-2. Prepare training dataset and modify "dataset_root" in `configs/TTVSR_reds4.py` and `configs/TTVSR_vimeo90k.py`
-3. Run training
+4. Prepare testing dataset and modify "datasetPath" in `./test.py`
+5. Run test
 ```
-# REDS
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ./tools/dist_train.sh configs/TTVSR_reds4.py 8
+mkdir weights
 # Vimeo
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ./tools/dist_train.sh configs/TTVSR_vimeo90k.py 8
+python test.py
 ```
-4. The training results are saved in `./ttvsr_reds4` and `./ttvsr_vimeo90k` (also can be set by modifying "work_dir" in `configs/TTVSR_reds4.py` and `configs/TTVSR_vimeo90k.py`) -->
+
+## Train
+1. Clone this github repo
+```
+git clone https://github.com/ChengxuLiu/TTVFI.git
+cd TTVFI
+```
+2. Generate the Correlation package required by [PWCNet](https://github.com/NVlabs/PWC-Net/tree/master/PyTorch/external_packages/correlation-pytorch-master):
+```
+cd ./models/PWCNet/correlation_package_pytorch1_0/
+./build.sh
+```
+3. Prepare training dataset and modify "datasetPath" in `./train_stage1.py` and `./train_stage2.py`
+4. Run training of stage1
+```
+mkdir weights
+# stage one
+python train_stage1.py
+```
+5. The models of stage1 are saved in `./weights` and fed into stage2 (modify "pretrained" in `./train_stage2.py`)
+6. Run training of stage1
+```
+# stage two
+python train_stage2.py
+```
+7. The models of stage2 are also saved in `./weights`
+
 
 ## Citation
 <!-- If you find the code and pre-trained models useful for your research, please consider citing our paper. :blush:
