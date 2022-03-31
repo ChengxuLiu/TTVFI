@@ -58,7 +58,7 @@ The output results on Vimeo-90K testing set, DAVIS, UCF101 and SNU-FILM can be d
 
 ## Dataset
 1. Training set
-	* [Viemo-90K](https://github.com/anchen1011/toflow) dataset. Download the [Both triplet training and test set](http://data.csail.mit.edu/tofu/dataset/vimeo_triplet.zip). The `tri_trainlist.txt` file listing the training samples in the download zip file.
+	* [Viemo-90K](https://github.com/anchen1011/toflow) dataset. Download the [both triplet training and test set](http://data.csail.mit.edu/tofu/dataset/vimeo_triplet.zip). The `tri_trainlist.txt` file listing the training samples in the download zip file.
 		- Make Vimeo-90K structure be:
 		```
 			├────vimeo_triplet
@@ -71,7 +71,7 @@ The output results on Vimeo-90K testing set, DAVIS, UCF101 and SNU-FILM can be d
         ```
 
 2. Testing set
-    * [Viemo-90K](https://github.com/anchen1011/toflow) dataset. The `tri_testlist.txt` file listing the testing samples in the download zip file.
+    * [Viemo-90K](https://github.com/anchen1011/toflow) testset. The `tri_testlist.txt` file listing the testing samples in the download zip file.
     * [DAVIS](https://github.com/HyeongminLEE/AdaCoF-pytorch/tree/master/test_input/davis), [UCF101](https://drive.google.com/file/d/0B7EVK8r0v71pdHBNdXB6TE1wSTQ/view?resourcekey=0-r6ihCy20h3kbgZ3ZdimPiA), and [SNU-FILM](https://myungsub.github.io/CAIN/) dataset.
 		- Make DAVIS, UCF101, and SNU-FILM structure be:
 		```
