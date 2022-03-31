@@ -40,6 +40,12 @@ This is the official PyTorch implementation of the paper [Learning Trajectory-Aw
 * Pillow == 8.4.0
 * imageio == 2.15.0
 * numpy == 1.19.5
+Generate the Correlation package required by [PWCNet](https://github.com/NVlabs/PWC-Net/tree/master/PyTorch/external_packages/correlation-pytorch-master):
+```
+git clone https://github.com/ChengxuLiu/TTVFI.git
+cd ./TTVFI/models/PWCNet/correlation_package_pytorch1_0/
+./build.sh
+```
 
 ## Model and Results
 <!-- Pre-trained models can be downloaded from [google drive](https://drive.google.com/drive/folders/1dXzyi_9nMLC3FU7SKkvLEGOMyv0lfcV2?usp=sharing) and [baidu cloud](https://pan.baidu.com/s/1xjGCnChxFxFcPs0cBVZ-ew)(nbgc).
@@ -150,9 +156,6 @@ month = {June}
 }
 ``` -->
 
-<!-- ## Acknowledgment
-This code is built on [mmediting](https://github.com/open-mmlab/mmediting). We thank the authors of [BasicVSR](https://github.com/ckkelvinchan/BasicVSR-IconVSR) for sharing their code.
- -->
 ## Contact
 If you meet any problems, please describe them in issues or contact:
 * Chengxu Liu: <liuchx97@gmail.com>
