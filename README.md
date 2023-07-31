@@ -21,9 +21,11 @@ This is the official PyTorch implementation of the paper [Learning Trajectory-Aw
 <img src="./fig/teaser_TT-VFI.png" width=70%>
 
 ### Contribution
-<!-- We propose a novel trajectory-aware Transformer, which is one of the first works to introduce Transformer into video super-resolution tasks. TTVSR reduces computational costs and enables long-range modeling in videos. TTVSR can outperform existing SOTA methods in four widely-used VSR benchmarks.
- -->
-
+<!-- We propose a novel trajectory-aware Transformer, which is one of the first works to introduce Transformer into video super-resolution tasks. TTVSR reduces computational costs and enables long-range modeling in videos. TTVSR can outperform existing SOTA methods in four widely-used VSR benchmarks. -->
+* We propose a novel trajectory-aware Transformer, which enables more accurate features learning of synthesis network by introducing Transformer into VFI tasks. Our method focuses on regions of video frames with motion consistency differences and performs attention with two kinds of well-designed visual tokens along the motion trajectory.
+* We propose a consistent motion learning module to generate the consistent motion in trajectory-aware Transformer, which is used to generate the trajectories and guide the learning of the attention mechanism in different regions.
+* Extensive experiments demonstrate that the proposed TTVFI can outperform existing state-of-the-art methods in four widely-used VFI benchmarks.
+    
 ### Overview
 <img src="./fig/framework_TT-VFI.png" width=100%>
 
