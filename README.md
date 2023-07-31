@@ -17,11 +17,9 @@ This is the official PyTorch implementation of the paper [Learning Trajectory-Aw
 
 
 ## Introduction
-<!-- We proposed an approach named TTVFI to study video super-resolution by leveraging long-range frame dependencies. TTVSR introduces Transformer architectures in video super-resolution tasks and formulates video frames into pre-aligned trajectories of visual tokens to calculate attention along trajectories. -->
 <img src="./fig/teaser_TT-VFI.png" width=70%>
 
 ### Contribution
-<!-- We propose a novel trajectory-aware Transformer, which is one of the first works to introduce Transformer into video super-resolution tasks. TTVSR reduces computational costs and enables long-range modeling in videos. TTVSR can outperform existing SOTA methods in four widely-used VSR benchmarks. -->
 * We propose a novel trajectory-aware Transformer, which enables more accurate features learning of synthesis network by introducing Transformer into VFI tasks. Our method focuses on regions of video frames with motion consistency differences and performs attention with two kinds of well-designed visual tokens along the motion trajectory.
 * We propose a consistent motion learning module to generate the consistent motion in trajectory-aware Transformer, which is used to generate the trajectories and guide the learning of the attention mechanism in different regions.
 * Extensive experiments demonstrate that the proposed TTVFI can outperform existing state-of-the-art methods in four widely-used VFI benchmarks.
@@ -46,8 +44,8 @@ This is the official PyTorch implementation of the paper [Learning Trajectory-Aw
 
 ## Model and Results
 Pre-trained models can be downloaded from [onedrive](https://1drv.ms/u/s!Au4fJlmAZDhlhwjmP0D2RJOQaFqF?e=UHVz3H), [google drive](https://drive.google.com/drive/folders/1JWl22XUc0IOp1mx79_DRtwOwHjO1FP8I?usp=sharing), and [baidu cloud](https://pan.baidu.com/s/1nCjVhwArNajWFDDYwt4IUA)(j3nd).
-* *TTVSR_stage1.pth*: trained from first stage with consistent motion learning.
-* *TTVSR_stage2.pth*: trained from second stage with trajectory-aware Transformer on Viemo-90K dataset.
+* *TTVFI_stage1.pth*: trained from first stage with consistent motion learning.
+* *TTVFI_stage2.pth*: trained from second stage with trajectory-aware Transformer on Viemo-90K dataset.
 
 The output results on Vimeo-90K testing set, DAVIS, UCF101 and SNU-FILM can be downloaded from [onedrive](https://1drv.ms/u/s!Au4fJlmAZDhlhwjmP0D2RJOQaFqF?e=UHVz3H), [google drive](https://drive.google.com/drive/folders/1JWl22XUc0IOp1mx79_DRtwOwHjO1FP8I?usp=sharing), and [baidu cloud](https://pan.baidu.com/s/1nCjVhwArNajWFDDYwt4IUA)(j3nd).
 
@@ -161,16 +159,15 @@ python train_stage2.py
 
 
 ## Citation
-<!-- If you find the code and pre-trained models useful for your research, please consider citing our paper. :blush:
+If you find the code and pre-trained models useful for your research, please consider citing our paper. :blush:
 ```
-@InProceedings{liu2022learning,
-author = {Liu, Chengxu and Yang, Huan and Fu, Jianlong and Qian, Xueming},
-title = {Learning Trajectory-Aware Transformer for Video Super-Resolution},
-booktitle = {CVPR},
-year = {2022},
-month = {June}
+@article{liu2022ttvfi,
+  title={Ttvfi: Learning trajectory-aware transformer for video frame interpolation},
+  author={Liu, Chengxu and Yang, Huan and Fu, Jianlong and Qian, Xueming},
+  journal={arXiv preprint arXiv:2207.09048},
+  year={2022}
 }
-``` -->
+``` 
 
 ## Contact
 If you meet any problems, please describe them in issues or contact:
