@@ -161,11 +161,12 @@ python train_stage2.py
 ## Citation
 If you find the code and pre-trained models useful for your research, please consider citing our paper. :blush:
 ```
-@article{liu2022ttvfi,
+@article{liu2023ttvfi,
   title={Ttvfi: Learning trajectory-aware transformer for video frame interpolation},
   author={Liu, Chengxu and Yang, Huan and Fu, Jianlong and Qian, Xueming},
-  journal={arXiv preprint arXiv:2207.09048},
-  year={2022}
+  journal={IEEE Transactions on Image Processing},
+  year={2023},
+  publisher={IEEE}
 }
 ``` 
 
