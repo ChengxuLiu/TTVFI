@@ -1,5 +1,5 @@
 # [TIP 2023] TTVFI
-This is the official PyTorch implementation of the paper [Learning Trajectory-Aware Transformer for Video Frame Interpolation](ArxivLink).
+This is the official PyTorch implementation of the paper [Learning Trajectory-Aware Transformer for Video Frame Interpolation](https://arxiv.org/abs/2207.09048).
 
 ## Contents
 - [Introduction](#introduction)
